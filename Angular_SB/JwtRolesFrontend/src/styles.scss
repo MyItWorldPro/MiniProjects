@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* My Global styles starts */
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+/* My Global styles ends */
+
+// app.component main div
+.mainDiv {
+    margin: 50px;
+}
+
+// Logout button global style
+.logoutBtn {
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+}
+
+// user details span CSS in header
+.userDetailsSpan {
+    position: absolute;
+    right: 200px;
+}
+
+//go to home icon style
+.goToHomeIcon {
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.goToHomeIcon:hover {
+    color: #3f51b5;
+}
