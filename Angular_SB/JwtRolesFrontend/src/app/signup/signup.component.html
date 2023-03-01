@@ -1,1 +1,40 @@
-<p>signup works!</p>
+<div class="center loginText">SignUp<mat-icon class="loginMatIcon">login</mat-icon></div>
+
+<div class="center">
+    <form [formGroup]="signUpForm">
+
+        <mat-form-field appearance="outline" class="loginFormFields">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Please enter your username" name="username" formControlName="username">
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field appearance="outline" class="loginFormFields">
+            <mat-icon matSuffix>password</mat-icon>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Please enter your password" name="password" formControlName="password"
+                type="password">
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field appearance="outline" class="loginFormFields">
+            <mat-icon matSuffix>password</mat-icon>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput placeholder="Please confirm your password" name="confirmPassword"
+                formControlName="confirmPassword" type="password">
+        </mat-form-field>
+
+        <div class="form-buttons">
+            <button mat-raised-button color="primary" (click)="signup()">SignUp</button>
+        </div>
+
+
+    </form>
+</div>
+
+<div class="center" style="margin-top: 30px;">
+    Want to Login instead? &nbsp;<a class="nav-item nav-link" routerLink="/login">Please Login here.</a>
+</div>
