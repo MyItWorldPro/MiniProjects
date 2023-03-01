@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "418fc3c6-6f19-429a-ad47-704f6cbb4c23",
+		"name": "JWT With Roles - Misc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20792730"
+	},
+	"item": [
+		{
+			"name": "auth/helloworld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/auth/helloworld",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"auth",
+						"helloworld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/auth/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"auth",
+						"welcome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/signup - admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"myusername\":\"my_admin_user\",\r\n    \"mypassword\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/signup - user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"myusername\":\"my_user_user\",\r\n    \"mypassword\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login - admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"myusername\":\"my_admin_user\",\r\n    \"mypassword\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login - user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"myusername\":\"my_user_user\",\r\n    \"mypassword\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/helloworldproduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm8iLCJpYXQiOjE2NzczOTkwOTksImV4cCI6MTY3NzQwMDg5OX0.CRQECEBJXTd7EHeh-aaxvcHMxZbpuQFe8693z0X_WnDGo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/product/helloworldproduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"product",
+						"helloworldproduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/admin_only_endpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJteV91c2VyX3VzZXIiLCJpYXQiOjE2Nzc0MTQ4NzksImV4cCI6MTY3NzQxNjY3OX0.cCr88XgTdFzeVudC23Newq4D4x066InfFFycgDDLnjY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/product/admin_only_endpoint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"product",
+						"admin_only_endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/user_only_endpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJteV9hZG1pbl91c2VyIiwiaWF0IjoxNjc3NTcxNTg3LCJleHAiOjE2Nzc1NzMzODd9.-TVxH-Nsr0skvEt5WYbdZpOrmh6zCE_aDbB7aosVKAM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/product/user_only_endpoint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"product",
+						"user_only_endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/admin_and_user_endpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJteV9hZG1pbl91c2VyIiwiaWF0IjoxNjc3NTcxNTg3LCJleHAiOjE2Nzc1NzMzODd9.-TVxH-Nsr0skvEt5WYbdZpOrmh6zCE_aDbB7aosVKAM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/product/admin_and_user_endpoint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"product",
+						"admin_and_user_endpoint"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
