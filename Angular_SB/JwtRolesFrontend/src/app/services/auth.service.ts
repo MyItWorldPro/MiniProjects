@@ -50,4 +50,18 @@ export class AuthService {
       );
   }
 
+  /** POST: LogIn an existing User */
+  logIn(loginReq: MyAuthRequest): Observable<MyAuthResponse> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<MyAuthResponse>(this.constants.BASE_URL_AUTH + this.constants.AUTH_URL_LOGIN,
+      loginReq, httpOptions)
+      .pipe(
+        catchError(err => this.handleError(err))
+      );
+  }
+
 }
