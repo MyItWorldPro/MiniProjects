@@ -11,5 +11,6 @@ public class MyAuthResponse {
 
     private String myusername;
     private String mytoken;
+    private String myroles;
 
 }

@@ -1,15 +1,16 @@
 <div class="center loginText">SignUp<mat-icon class="loginMatIcon">login</mat-icon></div>
 
-<div class="center">
+<div class="center" *ngIf="!isSignUpSuccessfulFlag">
     <form [formGroup]="signUpForm">
 
         <mat-form-field appearance="outline" class="loginFormFields">
             <mat-icon matSuffix>person</mat-icon>
             <mat-label>Username</mat-label>
             <input matInput placeholder="Please enter your username" name="username" formControlName="username">
+            <mat-hint class="matHint">Format: "&lt;name&gt;_&lt;role&gt;". Ex. Ramesh_admin</mat-hint>
         </mat-form-field>
 
-        <br />
+        <br /><br />
 
         <mat-form-field appearance="outline" class="loginFormFields">
             <mat-icon matSuffix>password</mat-icon>
@@ -35,6 +36,10 @@
     </form>
 </div>
 
-<div class="center" style="margin-top: 30px;">
-    Want to Login instead? &nbsp;<a class="nav-item nav-link" routerLink="/login">Please Login here.</a>
+<div class="center" style="margin-top: 30px;" *ngIf="!isSignUpSuccessfulFlag">
+    Want to Login? &nbsp;<a class="nav-item nav-link" routerLink="/login">Please Login here.</a>
+</div>
+
+<div class="center" style="margin-top: 30px;" *ngIf="isSignUpSuccessfulFlag">
+    SignUp is Successful. Want to Login? &nbsp;<a class="nav-item nav-link" routerLink="/login">Please Login here.</a>
 </div>

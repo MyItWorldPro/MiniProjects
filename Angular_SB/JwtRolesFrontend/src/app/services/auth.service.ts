@@ -12,6 +12,7 @@ export interface MyAuthRequest {
 export interface MyAuthResponse {
   myusername: string;
   mytoken: string;
+  myroles: string;
 }
 
 @Injectable({

@@ -44,6 +44,7 @@ public class MyUserService {
         MyAuthResponse myAuthResponse = new MyAuthResponse();
         myAuthResponse.setMyusername(myAuthRequest.getMyusername());
         myAuthResponse.setMytoken(jwtToken);
+        myAuthResponse.setMyroles(myUser.getMyroles());
         return myAuthResponse;
     }
 
