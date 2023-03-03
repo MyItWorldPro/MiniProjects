@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, tap } from 'rxjs/operators';
 import { Constants } from '../config/constants'
 
 export interface MyAuthRequest {
@@ -19,6 +19,8 @@ export interface MyAuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
+
+  isLoggedIn = false;
 
   constructor(private http: HttpClient, private constants: Constants) { }
 
@@ -60,6 +62,7 @@ export class AuthService {
     return this.http.post<MyAuthResponse>(this.constants.BASE_URL_AUTH + this.constants.AUTH_URL_LOGIN,
       loginReq, httpOptions)
       .pipe(
+        tap(() => this.isLoggedIn = true),
         catchError(err => this.handleError(err))
       );
   }

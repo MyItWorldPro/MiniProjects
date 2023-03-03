@@ -63,8 +63,9 @@ public class MyAuthController {
             MyAuthResponse myAuthResponse = new MyAuthResponse();
             myAuthResponse.setMyusername(myAuthRequest.getMyusername());
             myAuthResponse.setMytoken(myJwtService.generateTokenFromMyUsername(myAuthRequest.getMyusername()));
-            myAuthResponse.setMyroles(authentication.getAuthorities().stream()
-                    .map(Object::toString).reduce("", String::concat));
+//            myAuthResponse.setMyroles(authentication.getAuthorities().stream()
+//                    .map(Object::toString).reduce("", String::concat)); //ADMIN,USER
+            myAuthResponse.setMyroles(authentication.getAuthorities().toString()); //['ADMIN','USER']
             return new ResponseEntity<>(myAuthResponse, HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Invalid Credentials!", HttpStatus.FORBIDDEN);

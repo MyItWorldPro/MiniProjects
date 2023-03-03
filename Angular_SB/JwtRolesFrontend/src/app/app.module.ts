@@ -15,6 +15,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { AuthService } from './services/auth.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
